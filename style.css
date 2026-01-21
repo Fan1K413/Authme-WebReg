@@ -1,0 +1,426 @@
+/* ===== 基本布局 ===== */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f0f2f5;
+    padding: 20px;
+    color: #333;
+    margin: 0;
+}
+
+.top-btns {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+}
+
+.top-btns a {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 6px 12px;
+    background: #888;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.top-btns a:hover {
+    background: #555;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.msg {
+    text-align: center;
+    color: #00aeec;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.msg.err {
+    color: #e74c3c;
+}
+
+.msg.ok {
+    color: #2ecc71;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 12px;
+    color: #aaa;
+}
+
+.form-inline {
+    max-width: 700px;
+    margin: 0 auto 20px auto;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* 支持换行 */
+}
+
+.form-inline input{flex:1;padding:10px;border-radius:8px;border:1px solid #ccc;font-size:14px;}
+.form-inline input {
+    flex: 1;  /* 设置一个最小宽度，避免过宽 */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.form-inline button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    background: #00aeec;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.form-inline button:hover {
+    background: #008ecf;
+    transform: scale(1.05);
+}
+
+/* ===== 表格 ===== */
+table {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto 20px;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    background: #fff;
+}
+
+th,
+td {
+    padding: 12px 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+th {
+    background: #00aeec;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    border-bottom: 2px solid #007bb5;
+}
+
+tr {
+    transition: all 0.3s ease;
+}
+
+tr:hover {
+    background: #e0f3ff;
+}
+
+td:hover {
+    transform: scale(1.03);
+}
+
+table a,
+.username a {
+    color: #000 !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+}
+
+table a:hover,
+.username a:hover {
+    color: #000 !important;
+    transform: scale(1.05);
+}
+
+/* ===== 弹窗 ===== */
+.modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.25s ease;
+}
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background: #fff;
+    width: 420px;
+    max-width: 92%;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: scale(0.8);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    position: relative;
+    border: 2px solid #00aeec;
+}
+
+.modal.show .modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    color: #999;
+    font-size: 20px;
+}
+
+.modal-header {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #222;
+}
+
+.modal-header p {
+    margin: 4px 0 0 0;
+    font-size: 14px;
+    color: #555;
+}
+
+/* ===== 表单行 ===== */
+.form-row {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* 保证输入框和按钮间有一定间隙 */
+    margin: 0 auto 10px auto;
+}
+
+.form-row label {
+    width: 90px;
+    color: #555;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.form-row input {
+    box-sizing: border-box;
+    padding: 10px 12px;
+    border: 1px solid #dcdfe6;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.form-row button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    background: #00aeec;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button {
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+    transform: scale(1.05);
+}
+
+.btn-save {
+    background: #00aeec;
+    color: #fff;
+    width: 100%;
+    margin-top: 12px;
+}
+
+.btn-save:hover {
+    background: #008ecf;
+}
+
+.btn-danger {
+    background: #e74c3c;
+    color: #fff;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.btn-danger:hover:not(:disabled) {
+    background: #c0392b;
+}
+
+.btn-danger:disabled {
+    background: #e0e0e0;
+    color: #999;
+    cursor: not-allowed;
+}
+
+/* ===== 屏幕自适应 ===== */
+
+/* 当宽度小于768px时，调整布局 */
+@media (max-width: 768px) {
+
+    /* 顶部按钮样式调整 */
+    .top-btns {
+        top: 10px;
+        right: 10px;
+    }
+
+    /* 搜索框和添加舰长按钮自适应 */
+    .form-inline {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* 表格调整为单列显示 */
+    table {
+        max-width: 100%;
+        margin: 20px 0;
+    }
+
+    /* 弹窗自适应 */
+    .modal-content {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-row label {
+        width: auto;
+        text-align: left;
+    }
+}
+
+/* 当屏幕宽度小于480px时，更强的适配 */
+@media (max-width: 480px) {
+
+    /* 顶部按钮字体和边距 */
+    .top-btns a {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+    /* 弹窗内容调整 */
+    .modal-content {
+        width: 90%;
+    }
+
+    .form-inline input {
+        font-size: 12px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .msg {
+        font-size: 14px;
+    }
+
+    table td, table th {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 4px;
+}
+
+.wrap {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    background: #fff;
+    width: 360px;
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, .08);
+}
+
+h1 {
+    margin: 0 0 6px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.desc {
+    text-align: center;
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.group {
+    margin-bottom: 14px;
+}
+
+.group input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    font-size: 14px;
+    border: 1px solid #dcdfe6;
+    border-radius: 6px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #00aeec;
+}
+
+.group button {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    background: #00aeec;
+    border: none;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.group button:hover {
+    background: #0096cc;
+}
+

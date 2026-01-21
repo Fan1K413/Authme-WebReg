@@ -1,0 +1,54 @@
+<?php
+http_response_code(404); // 设置 HTTP 404 状态
+require __DIR__ . '/config.php'; // 如果需要使用站点名称
+?>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>404 - <?=$config['site_name']?></title>
+<link rel="icon" href="./icon.png" type="image/png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<style>
+/* 可选额外微调，让按钮更适合404 */
+.error-code {
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 12px;
+    color: #e74c3c;
+}
+.error-msg {
+    font-size: 16px;
+    text-align: center;
+    color: #555;
+    margin-bottom: 20px;
+}
+.error-btn {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    width: 50%;
+    padding: 10px;
+    font-size: 15px;
+    background: #00aeec;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+}
+.error-btn:hover {
+    background: #0096cc;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+    <div class="card">
+        <div class="error-code">404</div>
+        <div class="error-msg">抱歉，您访问的页面不存在。</div>
+        <a href="/" class="error-btn">返回首页</a>
+    </div>
+</div>
+</body>
+</html>
